@@ -10,23 +10,7 @@ import Combine
 import CryptoKit
 //2e094a4ba352e75d82790199f96df05d
 //a71741b0b81d4d24d36925c3c6bccd4843887db7
-class ViewModel: ObservableObject {
-    private var cancellables: Set<AnyCancellable> = []
-    private let apiService: APIService!
-    init() {
-        apiService = APIService()
-        apiService.getCaracters()
-            .sink(receiveCompletion: { error in
-            print(error)
-            print(type(of: error))
-        }, receiveValue: { pagingData in
-            print(pagingData.results.count)
-        }).store(in: &cancellables)
-    }
-    
-    
-    
-}
+
 class APIService {
     
     func request(urlString: String) -> AnyPublisher<JsonResultModel, Error> {
@@ -75,81 +59,4 @@ class APIService {
     
     
     
-}
-
-
-struct Characters: Codable {
-    let thumbnail: Thumbnail
-    let comics, series: Comics
-    let id: Int
-    let stories: Stories
-    let events: Comics
-    let urls: [URLElement]
-    let resourceURI: String
-    let description: String
-    let modified: String
-    let name: String
-}
-
-// MARK: - Comics
-struct Comics: Codable {
-    let returned: Int
-    let collectionURI: String
-    let items: [ComicsItem]
-    let available: Int
-}
-
-// MARK: - ComicsItem
-struct ComicsItem: Codable {
-    let name: String
-    let resourceURI: String
-}
-
-// MARK: - Stories
-struct Stories: Codable {
-    let returned: Int
-    let collectionURI: String
-    let items: [StoriesItem]
-    let available: Int
-}
-
-// MARK: - StoriesItem
-struct StoriesItem: Codable {
-    let name: String
-    let resourceURI: String
-    let type: ItemType
-}
-
-enum ItemType: String, Codable {
-    case cover = "cover"
-    case empty = ""
-    case interiorStory = "interiorStory"
-}
-
-// MARK: - Thumbnail
-struct Thumbnail: Codable {
-    let path: String
-    let thumbnailExtension: Extension
-
-    enum CodingKeys: String, CodingKey {
-        case path
-        case thumbnailExtension = "extension"
-    }
-}
-
-enum Extension: String, Codable {
-    case gif = "gif"
-    case jpg = "jpg"
-}
-
-// MARK: - URLElement
-struct URLElement: Codable {
-    let type: URLType
-    let url: String
-}
-
-enum URLType: String, Codable {
-    case comiclink = "comiclink"
-    case detail = "detail"
-    case wiki = "wiki"
 }
