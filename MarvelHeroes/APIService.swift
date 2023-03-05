@@ -43,8 +43,8 @@ class APIService {
     
     func getCaracters(offset: Int = 0) -> AnyPublisher<DataPaging<Characters>, Error> {
         let ts = Date().timeIntervalSinceReferenceDate
-        let publicKey = "2e094a4ba352e75d82790199f96df05d"
-        let privateKey = "a71741b0b81d4d24d36925c3c6bccd4843887db7"
+        let publicKey = ""
+        let privateKey = ""
         let md5InputData = "\(ts)\(privateKey)\(publicKey)".data(using: .utf8)!
         let digest = Insecure.MD5.hash(data: md5InputData)
         let hashString = digest.map {
