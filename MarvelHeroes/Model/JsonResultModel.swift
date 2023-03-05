@@ -82,7 +82,7 @@ public class DataPaging<T: Decodable>: NSObject, Decodable {
         results   = try container.decodeIfPresent( [T].self, forKey: .results ) ?? []
         offset = try container.decodeIfPresent(Int.self, forKey: .offset) ?? 0
         total = try container.decodeIfPresent(Int.self, forKey: .total) ?? 0
-        total = try container.decodeIfPresent(Int.self, forKey: .total) ?? 0
+        count = try container.decodeIfPresent(Int.self, forKey: .count) ?? 0
         limit = try container.decodeIfPresent(Int.self, forKey: .limit) ?? 0
     }
 

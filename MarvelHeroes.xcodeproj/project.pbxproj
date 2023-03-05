@@ -14,7 +14,7 @@
 		D303A83B29B1FED20029DD60 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83A29B1FED20029DD60 /* ViewModel.swift */; };
 		D303A83E29B1FF050029DD60 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83D29B1FF050029DD60 /* Model.swift */; };
 		D34D270D29B1D99F00CCD60C /* MarvelHeroesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D270C29B1D99F00CCD60C /* MarvelHeroesApp.swift */; };
-		D34D270F29B1D99F00CCD60C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D270E29B1D99F00CCD60C /* ContentView.swift */; };
+		D34D270F29B1D99F00CCD60C /* CaracterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D270E29B1D99F00CCD60C /* CaracterListView.swift */; };
 		D34D271129B1D9A100CCD60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34D271029B1D9A100CCD60C /* Assets.xcassets */; };
 		D34D271429B1D9A100CCD60C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34D271329B1D9A100CCD60C /* Preview Assets.xcassets */; };
 		D34D271E29B1D9A100CCD60C /* MarvelHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D271D29B1D9A100CCD60C /* MarvelHeroesTests.swift */; };
@@ -48,7 +48,7 @@
 		D303A83D29B1FF050029DD60 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D34D270929B1D99F00CCD60C /* MarvelHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34D270C29B1D99F00CCD60C /* MarvelHeroesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesApp.swift; sourceTree = "<group>"; };
-		D34D270E29B1D99F00CCD60C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D34D270E29B1D99F00CCD60C /* CaracterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracterListView.swift; sourceTree = "<group>"; };
 		D34D271029B1D9A100CCD60C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34D271329B1D9A100CCD60C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D34D271929B1D9A100CCD60C /* MarvelHeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHeroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +104,7 @@
 		D303A84029B1FF400029DD60 /* Caracters */ = {
 			isa = PBXGroup;
 			children = (
-				D34D270E29B1D99F00CCD60C /* ContentView.swift */,
+				D34D270E29B1D99F00CCD60C /* CaracterListView.swift */,
 				D303A83A29B1FED20029DD60 /* ViewModel.swift */,
 			);
 			path = Caracters;
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D34D270F29B1D99F00CCD60C /* ContentView.swift in Sources */,
+				D34D270F29B1D99F00CCD60C /* CaracterListView.swift in Sources */,
 				D303A83729B1E6740029DD60 /* CodableExtenstion.swift in Sources */,
 				D303A83329B1E62A0029DD60 /* APIService.swift in Sources */,
 				D303A83929B1F8FF0029DD60 /* DictionaryExtension.swift in Sources */,

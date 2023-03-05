@@ -41,7 +41,7 @@ class APIService {
             .eraseToAnyPublisher()
     }
     
-    func getCaracters() -> AnyPublisher<DataPaging<Characters>, Error> {
+    func getCaracters(offset: Int = 0) -> AnyPublisher<DataPaging<Characters>, Error> {
         let ts = Date().timeIntervalSinceReferenceDate
         let publicKey = "2e094a4ba352e75d82790199f96df05d"
         let privateKey = "a71741b0b81d4d24d36925c3c6bccd4843887db7"
@@ -51,7 +51,7 @@ class APIService {
             String(format: "%02x", $0)
         }.joined()
         
-        let url = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hashString)"
+        let url = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hashString)&offset=\(offset)"
         return request(urlString: url)
             .tryMap { try $0.mapTo(type: DataPaging<Characters>.self) }
             .eraseToAnyPublisher()

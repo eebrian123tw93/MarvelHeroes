@@ -11,7 +11,7 @@ import SwiftUI
 struct MarvelHeroesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CaracterListView()
         }
     }
 }

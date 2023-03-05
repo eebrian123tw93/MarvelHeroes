@@ -46,29 +46,24 @@ struct Stories: Codable {
 struct StoriesItem: Codable {
     let name: String
     let resourceURI: String
-    let type: ItemType
+//    let type: ItemType
 }
 
-enum ItemType: String, Codable {
-    case cover = "cover"
-    case empty = ""
-    case interiorStory = "interiorStory"
-}
+//enum ItemType: String, Codable {
+//    case cover = "cover"
+//    case empty = ""
+//    case interiorStory = "interiorStory"
+//}
 
 // MARK: - Thumbnail
 struct Thumbnail: Codable {
     let path: String
-    let thumbnailExtension: Extension
+    let thumbnailExtension: String
 
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
     }
-}
-
-enum Extension: String, Codable {
-    case gif = "gif"
-    case jpg = "jpg"
 }
 
 // MARK: - URLElement
