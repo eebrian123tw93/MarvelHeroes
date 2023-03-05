@@ -17,7 +17,7 @@ struct CaracterListView: View {
                     viewModel.tryLoadMore(cell: cell)
                 }
             }.listStyle(.grouped)
-            .navigationTitle("Marvel Heros")
+            .navigationTitle("Marvel Caracters")
             .refreshable {
                 viewModel.refesh()
             }

@@ -67,6 +67,10 @@ public class DataPaging<T: Decodable>: NSObject, Decodable {
     var count: Int = 0
     var total: Int = 0
     var limit: Int = 0
+    
+    var nextOffset: Int {
+        offset + limit
+    }
 
     enum CodingKeys: String, CodingKey {
         case results

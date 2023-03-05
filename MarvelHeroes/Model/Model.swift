@@ -59,6 +59,10 @@ struct StoriesItem: Codable {
 struct Thumbnail: Codable {
     let path: String
     let thumbnailExtension: String
+    
+    var url: URL? {
+      URL(string:  "\(path.replacingOccurrences(of: "http://", with: "https://")).\(thumbnailExtension)")
+    }
 
     enum CodingKeys: String, CodingKey {
         case path
