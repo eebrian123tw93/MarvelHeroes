@@ -31,7 +31,7 @@ class CaracterListViewModel: ObservableObject {
             }, receiveValue: { [unowned self] pagingData in
                 self.offset = pagingData.nextOffset
                 self.characters = pagingData.results.map {
-                    CaracterCell(name: $0.name, description: $0.description, imageUrl: $0.thumbnail.url)
+                    CaracterCell(name: $0.name, description: $0.description, imageUrl: $0.thumbnail.url, abountLink: $0.urls)
                 }
             }).store(in: &cancellables)
     }
@@ -50,7 +50,7 @@ class CaracterListViewModel: ObservableObject {
                 }, receiveValue: { [unowned self] pagingData in
                     self.offset = pagingData.nextOffset
                     let characters = pagingData.results.map {
-                        CaracterCell(name: $0.name, description: $0.description, imageUrl: $0.thumbnail.url)
+                        CaracterCell(name: $0.name, description: $0.description, imageUrl: $0.thumbnail.url, abountLink: $0.urls)
                     }
                     self.characters.append(contentsOf: characters)
                 }).store(in: &cancellables)

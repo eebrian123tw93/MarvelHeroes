@@ -13,7 +13,7 @@ struct Characters: Codable {
     let id: Int
     let stories: Stories
     let events: Comics
-    let urls: [URLElement]
+    let urls: [AboutLink]
     let resourceURI: String
     let description: String
     let modified: String
@@ -70,8 +70,8 @@ struct Thumbnail: Codable {
     }
 }
 
-// MARK: - URLElement
-struct URLElement: Codable {
+// MARK: - AboutLink
+struct AboutLink: Codable {
     let type: URLType
     let url: String
 }
