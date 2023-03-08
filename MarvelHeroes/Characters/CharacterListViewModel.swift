@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class CaracterListViewModel: ObservableObject {
+class CharacterListViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     private let apiService: APIService!
     
@@ -23,7 +23,7 @@ class CaracterListViewModel: ObservableObject {
     
     func refesh() {
         offset = 0
-        apiService.getCaracters()
+        apiService.getCharacters()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { error in
                 print(error)
@@ -41,7 +41,7 @@ class CaracterListViewModel: ObservableObject {
         let thresholdIndex = characters.index(characters.endIndex, offsetBy: -5)
         if characters.firstIndex(where: { $0.id == cell.id }) == thresholdIndex {
             loadMore = true
-            apiService.getCaracters(offset: offset)
+            apiService.getCharacters(offset: offset)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [unowned self] error in
                     print(error)

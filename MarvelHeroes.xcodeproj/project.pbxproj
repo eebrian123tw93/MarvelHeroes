@@ -11,10 +11,10 @@
 		D303A83529B1E65B0029DD60 /* JsonResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83429B1E65B0029DD60 /* JsonResultModel.swift */; };
 		D303A83729B1E6740029DD60 /* CodableExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83629B1E6740029DD60 /* CodableExtenstion.swift */; };
 		D303A83929B1F8FF0029DD60 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83829B1F8FF0029DD60 /* DictionaryExtension.swift */; };
-		D303A83B29B1FED20029DD60 /* CaracterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83A29B1FED20029DD60 /* CaracterListViewModel.swift */; };
+		D303A83B29B1FED20029DD60 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83A29B1FED20029DD60 /* CharacterListViewModel.swift */; };
 		D303A83E29B1FF050029DD60 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303A83D29B1FF050029DD60 /* Model.swift */; };
 		D34D270D29B1D99F00CCD60C /* MarvelHeroesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D270C29B1D99F00CCD60C /* MarvelHeroesApp.swift */; };
-		D34D270F29B1D99F00CCD60C /* CaracterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D270E29B1D99F00CCD60C /* CaracterListView.swift */; };
+		D34D270F29B1D99F00CCD60C /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D270E29B1D99F00CCD60C /* CharacterListView.swift */; };
 		D34D271129B1D9A100CCD60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34D271029B1D9A100CCD60C /* Assets.xcassets */; };
 		D34D271429B1D9A100CCD60C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34D271329B1D9A100CCD60C /* Preview Assets.xcassets */; };
 		D34D271E29B1D9A100CCD60C /* MarvelHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D271D29B1D9A100CCD60C /* MarvelHeroesTests.swift */; };
@@ -45,11 +45,11 @@
 		D303A83429B1E65B0029DD60 /* JsonResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResultModel.swift; sourceTree = "<group>"; };
 		D303A83629B1E6740029DD60 /* CodableExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtenstion.swift; sourceTree = "<group>"; };
 		D303A83829B1F8FF0029DD60 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
-		D303A83A29B1FED20029DD60 /* CaracterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracterListViewModel.swift; sourceTree = "<group>"; };
+		D303A83A29B1FED20029DD60 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		D303A83D29B1FF050029DD60 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D34D270929B1D99F00CCD60C /* MarvelHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34D270C29B1D99F00CCD60C /* MarvelHeroesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesApp.swift; sourceTree = "<group>"; };
-		D34D270E29B1D99F00CCD60C /* CaracterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaracterListView.swift; sourceTree = "<group>"; };
+		D34D270E29B1D99F00CCD60C /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		D34D271029B1D9A100CCD60C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34D271329B1D9A100CCD60C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D34D271929B1D9A100CCD60C /* MarvelHeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHeroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,13 +103,13 @@
 			path = Extenstion;
 			sourceTree = "<group>";
 		};
-		D303A84029B1FF400029DD60 /* Caracters */ = {
+		D303A84029B1FF400029DD60 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				D34D270E29B1D99F00CCD60C /* CaracterListView.swift */,
-				D303A83A29B1FED20029DD60 /* CaracterListViewModel.swift */,
+				D34D270E29B1D99F00CCD60C /* CharacterListView.swift */,
+				D303A83A29B1FED20029DD60 /* CharacterListViewModel.swift */,
 			);
-			path = Caracters;
+			path = Characters;
 			sourceTree = "<group>";
 		};
 		D34D270029B1D99F00CCD60C = {
@@ -140,7 +140,7 @@
 				D34D271229B1D9A100CCD60C /* Preview Content */,
 				D303A83C29B1FEF50029DD60 /* Model */,
 				D303A83F29B1FF260029DD60 /* Extenstion */,
-				D303A84029B1FF400029DD60 /* Caracters */,
+				D303A84029B1FF400029DD60 /* Characters */,
 				D3A4350629B47EC5000E64F7 /* CharactersDetail */,
 				D303A83229B1E62A0029DD60 /* APIService.swift */,
 			);
@@ -310,14 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D34D270F29B1D99F00CCD60C /* CaracterListView.swift in Sources */,
+				D34D270F29B1D99F00CCD60C /* CharacterListView.swift in Sources */,
 				D303A83729B1E6740029DD60 /* CodableExtenstion.swift in Sources */,
 				D303A83329B1E62A0029DD60 /* APIService.swift in Sources */,
 				D303A83929B1F8FF0029DD60 /* DictionaryExtension.swift in Sources */,
 				D3A4350829B47ED5000E64F7 /* CharactersDetailView.swift in Sources */,
 				D303A83529B1E65B0029DD60 /* JsonResultModel.swift in Sources */,
 				D34D270D29B1D99F00CCD60C /* MarvelHeroesApp.swift in Sources */,
-				D303A83B29B1FED20029DD60 /* CaracterListViewModel.swift in Sources */,
+				D303A83B29B1FED20029DD60 /* CharacterListViewModel.swift in Sources */,
 				D303A83E29B1FF050029DD60 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CaracterListView: View {
-    @ObservedObject var viewModel = CaracterListViewModel()
+struct CharacterListView: View {
+    @ObservedObject var viewModel = CharacterListViewModel()
     
     var body: some View {
         NavigationView {
@@ -20,7 +20,7 @@ struct CaracterListView: View {
                 })
     
             }.listStyle(.grouped)
-            .navigationTitle("Marvel Caracters")
+            .navigationTitle("Marvel Characters")
             .refreshable {
                 viewModel.refesh()
             }
@@ -69,7 +69,7 @@ struct CaracterCell: Identifiable {
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CaracterListView()
+        CharacterListView()
     }
 }
 #endif
