@@ -22,7 +22,7 @@ struct CharacterListView: View {
             }.listStyle(.grouped)
             .navigationTitle("Marvel Characters")
             .refreshable {
-                viewModel.refesh()
+                viewModel.refresh()
             }
         }
         
@@ -30,7 +30,7 @@ struct CharacterListView: View {
 }
 
 struct CustomCell: View {
-    @State var cell: CaracterCell
+    @State var cell: CharacterCell
     var body: some View {
         HStack {
             AsyncImage(url: cell.imageUrl) { image in
@@ -39,7 +39,7 @@ struct CustomCell: View {
             } placeholder: {
                 Color.purple.opacity(0.1)
             }.scaledToFit()
-                .frame(width:70, height: 70)
+                .frame(width:80, height: 80)
                 .cornerRadius(8)
                 .padding(.vertical, 2)
             
@@ -57,19 +57,27 @@ struct CustomCell: View {
     }
 }
 
-struct CaracterCell: Identifiable {
+struct CharacterCell: Identifiable {
     let id = UUID()
     let name: String
     let description: String
     let imageUrl: URL?
-    let abountLink: [AboutLink]
+    let aboutLink: [AboutLink]
 }
 
 
+
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+class ContentView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterListView()
     }
+    #if DEBUG
+    @objc class func injected() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.rootViewController =
+                UIHostingController(rootView: CharacterListView())
+    }
+    #endif
 }
 #endif

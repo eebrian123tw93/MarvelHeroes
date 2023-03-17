@@ -8,7 +8,7 @@
 import Foundation
 
 enum CustomError: Error {
-    case invlidURL
+    case invalidURL
     case responseNoData
     case payloadIsNotDictionary
     case payloadIsNil

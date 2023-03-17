@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharactersDetailView: View {
-    let cell: CaracterCell
+    let cell: CharacterCell
     var body: some View {
         VStack {
 
@@ -28,9 +28,9 @@ struct CharactersDetailView: View {
             Text(cell.description)
                 .padding(.horizontal, 16)
             Divider()
-            List(cell.abountLink, id: \.url) { abountLink in
-                Link(destination: URL(string: abountLink.url)!, label: {
-                    Text(abountLink.type.rawValue)
+            List(cell.aboutLink, id: \.url) { aboutLink in
+                Link(destination: URL(string: aboutLink.url)!, label: {
+                    Text(aboutLink.type.rawValue)
                 })
             }.listStyle(.plain)
 
@@ -40,8 +40,15 @@ struct CharactersDetailView: View {
     }
 }
 
-struct CaractersDetailView_Previews: PreviewProvider {
+class CharactersDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersDetailView(cell: .init(name: "Main", description: "dfhakjldfh", imageUrl: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"), abountLink: []))
+        CharactersDetailView(cell: .init(name: "Main", description: "dfha2kjldfh", imageUrl: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"), aboutLink: []))
     }
+    #if DEBUG
+    @objc class func injected() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.rootViewController =
+                UIHostingController(rootView: CharactersDetailView_Previews.previews)
+    }
+    #endif
 }

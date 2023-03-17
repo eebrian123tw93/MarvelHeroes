@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class CaracterListViewModel: ObservableObject {
+class CharacterListViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     private let apiService: APIService!
     
@@ -21,7 +21,7 @@ class CaracterListViewModel: ObservableObject {
         refesh()
     }
     
-    func refesh() {
+    func refresh() {
         offset = 0
         apiService.getCaracters()
             .receive(on: DispatchQueue.main)

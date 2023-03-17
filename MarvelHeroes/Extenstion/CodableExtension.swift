@@ -1,5 +1,5 @@
 //
-//  CodableExtenstion.swift
+//  CodableExtension.swift
 //  MarvelHeroes
 //
 //  Created by 呂紹瑜 on 2023/3/3.
@@ -143,10 +143,8 @@ extension KeyedEncodingContainer {
             } else if let data2 = data as? Double {
                 try arrayContainer.encode(data2)
             } else if let data2 = data as? Dictionary<String, Any> {
-                // run UnkeyedEncodingContainer > func encode(_ value: [String: Any] ) throws {
                 try arrayContainer.encode(data2)
             } else if let data2 = data as? Array<Any> {
-                // run 下面 array 裡的 array
                 try arrayContainer.encode(data2)
             }
         }
@@ -169,8 +167,7 @@ extension UnkeyedEncodingContainer {
                 try container.encode(data2)
             } else if let data2 = data as? Double {
                 try container.encode(data2)
-            } else if let data2 = data as? Dictionary<String, Any> {
-                // run UnkeyedEncodingContainer > func encode(_ value: [String: Any] ) throws {
+            } else if let data2 = data as? Dictionary<String, Any> {{
                 try container.encode(data2)
             } else if let data2 = data as? Array<Any> {
                 try container.encode(data2)

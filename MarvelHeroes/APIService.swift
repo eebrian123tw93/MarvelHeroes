@@ -41,7 +41,7 @@ class APIService {
             .eraseToAnyPublisher()
     }
     
-    func getCaracters(offset: Int = 0) -> AnyPublisher<DataPaging<Characters>, Error> {
+    func getCharacters(offset: Int = 0) -> AnyPublisher<DataPaging<Characters>, Error> {
         let ts = Date().timeIntervalSinceReferenceDate
         let publicKey = ""
         let privateKey = ""

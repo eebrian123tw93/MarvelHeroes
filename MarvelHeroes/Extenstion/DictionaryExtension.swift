@@ -8,7 +8,7 @@ import Foundation
 
 extension Dictionary where Key == String, Value: Any {
 
-    func dencode<T: Decodable>(_ type: T.Type) throws -> T {
+    func decode<T: Decodable>(_ type: T.Type) throws -> T {
         let dictionary = self
         do {
             let decoder = JSONDecoder()
