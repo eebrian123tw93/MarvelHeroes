@@ -9,13 +9,13 @@ import CoreData
 
 struct JSONCodingKeys: CodingKey {
     var stringValue: String
-    
+
     init?(stringValue: String) {
         self.stringValue = stringValue
     }
-    
+
     var intValue: Int?
-    
+
     init?(intValue: Int) {
         self.init(stringValue: "\(intValue)")
         self.intValue = intValue
@@ -23,7 +23,7 @@ struct JSONCodingKeys: CodingKey {
 }
 
 extension KeyedDecodingContainer {
-    
+
     func decode(_ type: [String: Any].Type) throws -> [String: Any] {
         var dictionary = [String: Any]()
         if self.allKeys.count == 0 {
@@ -51,7 +51,7 @@ extension KeyedDecodingContainer {
         let container = try self.nestedContainer(keyedBy: JSONCodingKeys.self, forKey: key)
         return try container.decode(type)
     }
-    
+
     func decodeIfPresent(_ type: [String: Any].Type, forKey key: K) throws -> [String: Any]? {
         guard contains(key) else {
             return nil
@@ -63,14 +63,14 @@ extension KeyedDecodingContainer {
         var container = try self.nestedUnkeyedContainer(forKey: key)
         return try container.decode(type)
     }
-    
+
     func decodeIfPresent(_ type: [Any].Type, forKey key: K) throws -> [Any]? {
         guard contains(key) else {
             return nil
         }
         return try decode(type, forKey: key)
     }
-    
+
 }
 
 extension UnkeyedDecodingContainer {
@@ -98,7 +98,7 @@ extension UnkeyedDecodingContainer {
         }
         return array
     }
-    
+
     mutating func decode(_ type: [String: Any].Type) throws -> [String: Any] {
         let nestedContainer = try self.nestedContainer(keyedBy: JSONCodingKeys.self)
         return try nestedContainer.decode(type)
@@ -108,10 +108,10 @@ extension UnkeyedDecodingContainer {
 extension KeyedEncodingContainer {
     mutating func encode(_ value: [String: Any], forKey key: K) throws {
         var container = nestedContainer(keyedBy: JSONCodingKeys.self, forKey: key)
-        
+
         for (key, data) in value {
             guard let keyCoding = JSONCodingKeys(stringValue: key) else {continue}
-            
+
             if let data2 = data as? Bool {
                 try container.encode(data2, forKey: keyCoding)
             } else if let data2 = data as? String {
@@ -129,7 +129,7 @@ extension KeyedEncodingContainer {
             }
         }
     }
-    
+
     // [String:Any] 裡的 Array
     mutating func encode(_ value: [Any], forKey key: K) throws {
         var arrayContainer = nestedUnkeyedContainer(forKey: key)
@@ -143,8 +143,10 @@ extension KeyedEncodingContainer {
             } else if let data2 = data as? Double {
                 try arrayContainer.encode(data2)
             } else if let data2 = data as? Dictionary<String, Any> {
+                // run UnkeyedEncodingContainer > func encode(_ value: [String: Any] ) throws {
                 try arrayContainer.encode(data2)
             } else if let data2 = data as? Array<Any> {
+                // run 下面 array 裡的 array
                 try arrayContainer.encode(data2)
             }
         }
@@ -153,7 +155,7 @@ extension KeyedEncodingContainer {
 }
 
 extension UnkeyedEncodingContainer {
-    
+
     // array 裡的 array
     mutating func encode(_ value: [Any] ) throws {
         var container = nestedUnkeyedContainer()
@@ -167,22 +169,23 @@ extension UnkeyedEncodingContainer {
                 try container.encode(data2)
             } else if let data2 = data as? Double {
                 try container.encode(data2)
-            } else if let data2 = data as? Dictionary<String, Any> {{
+            } else if let data2 = data as? Dictionary<String, Any> {
+                // run UnkeyedEncodingContainer > func encode(_ value: [String: Any] ) throws {
                 try container.encode(data2)
             } else if let data2 = data as? Array<Any> {
                 try container.encode(data2)
             }
         }
     }
-    
+
     // array 裡的 [String: Any]
     mutating func encode(_ value: [String: Any] ) throws {
-        
+
         var container = self.nestedContainer(keyedBy: JSONCodingKeys.self)
-        
+
         for (key, data) in value {
             guard let keyCoding = JSONCodingKeys(stringValue: key) else {continue}
-            
+
             if let data2 = data as? Bool {
                 try container.encode(data2, forKey: keyCoding)
             } else if let data2 = data as? String {
